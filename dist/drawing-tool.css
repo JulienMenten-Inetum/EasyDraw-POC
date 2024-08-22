@@ -1,0 +1,430 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+}
+
+.dt-top-toolbar {
+  position: absolute;
+  top: 1rem;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 99999;
+}
+.dt-top-toolbar .dt-palette {
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px rgba(63, 63, 63, 0.4);
+}
+
+.dt-btn {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  text-indent: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 45px;
+  height: 40px;
+  width: 40px;
+  color: #3f3f3f;
+  background: #fff;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.dt-btn:hover {
+  background: #e6e6e6;
+  cursor: pointer;
+}
+.dt-btn .dt-btn-icon-container {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dt-btn .dt-btn-icon-container svg {
+  color: #3f3f3f;
+}
+.dt-btn.dt-active {
+  background: #608ded;
+  color: #fff !important;
+}
+.dt-btn.dt-active svg {
+  color: #fff !important;
+}
+.dt-btn.dt-active.dt-expand::after {
+  border-bottom-color: #fff;
+}
+.dt-btn.dt-locked {
+  cursor: default;
+}
+.dt-btn.dt-locked svg {
+  opacity: 0.35;
+}
+.dt-btn.dt-text-btn {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  width: auto !important;
+  padding: 0 3px;
+  border-bottom: 1.5px solid #dfdfdf;
+  line-height: 40px;
+  margin-top: -1px;
+  display: flex;
+  justify-content: flex-start;
+}
+.dt-btn.dt-text-btn.dt-active {
+  border-right: 1.5px solid #b7e2ec;
+}
+.dt-btn.dt-img-btn {
+  position: relative;
+  line-height: normal;
+}
+.dt-btn.dt-img-btn span {
+  display: inline-block;
+}
+.dt-btn.dt-img-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 100%;
+}
+.dt-btn.dt-stroke-color:before, .dt-btn.dt-fill-color:before {
+  content: "";
+  background: #fff;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+}
+.dt-btn.dt-stroke-color .dt-inner1 { /* inset/overlay white box with black border */
+  background: #fff;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 5px;
+  top: 5px;
+}
+.dt-btn.dt-stroke-color .dt-inner2 { /* inset/overlay blue box with no border */
+  background: #3e8acc;
+  border: none;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  left: 6px;
+  top: 6px;
+}
+.dt-btn .dt-color {
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 22px;
+  height: 22px;
+}
+.dt-btn .dt-color.dt-no-color:after {
+  content: "L";
+  color: #e66665;
+  position: absolute;
+  left: -12px;
+  bottom: -14px;
+  font-size: 50px;
+}
+.dt-btn.dt-transparent {
+  background: #f4f4f4;
+}
+.dt-btn.dt-transparent:after {
+  content: "L";
+  color: #e66665;
+  position: absolute;
+  left: -32px;
+  bottom: -16px;
+  font-size: 100px;
+}
+.dt-btn.dt-send-to, .dt-btn.dt-undo-redo {
+  line-height: 41px;
+}
+
+#fill-color-white-icon {
+  stroke: black;
+}
+
+#white-stroke-color-icon {
+  stroke: black;
+}
+
+.dt-active #fill-color-white-icon, .dt-active #white-stroke-color-icon {
+  stroke: none;
+}
+
+.dt-text-button {
+  position: relative;
+}
+.dt-text-button .dt-btn-icon-container {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 5px;
+}
+.dt-text-button .dt-text-size-label {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  right: 0;
+  left: 0;
+  height: 30px;
+}
+
+.dt-eraser-width-btn .dt-btn-icon-container {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.dt-pipette-btn .dt-btn-icon-container {
+  height: 20px;
+  width: 20px;
+}
+
+#buttons {
+  display: inline-grid;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+}
+#buttons button,
+#buttons input::file-selector-button {
+  background-color: #f5fbfc;
+  border: 1.5px solid #dfdfdf;
+  padding: 10px 15px;
+  height: 40px;
+  border-radius: 4px;
+}
+#buttons button:hover,
+#buttons input::file-selector-button:hover {
+  background-color: #608ded;
+}
+
+.dt-container {
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(63, 63, 63, 0.4);
+  overflow: hidden;
+  border-radius: 4px;
+}
+.dt-container .dt-canvas-container {
+  background-color: #dfdfdf;
+  vertical-align: top;
+  display: inline-block;
+  outline: 0;
+}
+.dt-container .dt-canvas-container.with-border {
+  border: 1.5px solid #dfdfdf;
+  border-radius: 0 4px 4px 0;
+}
+.dt-container .dt-canvas-container.with-border canvas {
+  border-radius: 0 4px 4px 0;
+}
+.dt-container .dt-tools {
+  display: inline-block;
+  border: none;
+  vertical-align: top;
+  width: 40px;
+  margin: 0;
+  position: relative;
+  /* the following unset boostrap styles set in the question-interactives */
+  -webkit-box-sizing: initial;
+  box-sizing: initial;
+}
+.dt-container .dt-tools img {
+  vertical-align: initial;
+}
+.dt-container .dt-tools > :first-child {
+  border: none !important;
+}
+.dt-container .dt-expand {
+  position: relative;
+}
+.dt-container .dt-expand:after {
+  position: absolute;
+  display: block;
+  content: " ";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #3f3f3f;
+  bottom: 3px;
+  right: 1px;
+  width: 0;
+  height: 0;
+  transform: rotate(135deg);
+}
+.dt-container .dt-selected-line-width {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  right: 0;
+  left: 0;
+  height: 30px;
+}
+.dt-container .dt-palette {
+  display: flex;
+  border: 1.5px solid #dfdfdf;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.dt-container .dt-palette.dt-horizontal {
+  z-index: 1;
+}
+.dt-container .dt-palette.dt-horizontal .dt-btn {
+  vertical-align: middle;
+  height: 26.6666666667px;
+  width: 26.6666666667px !important;
+  border-radius: 4px;
+}
+.dt-container .dt-palette.dt-vertical {
+  flex-direction: column;
+  border-radius: 4px;
+}
+.dt-container .dt-spin {
+  -webkit-animation: dt-spin 2s infinite linear;
+  animation: dt-spin 2s infinite linear;
+}
+
+.dt-text-btn-wrapper {
+  width: auto !important;
+  display: flex;
+  justify-content: start;
+}
+.dt-text-btn-wrapper .dt-text-btn {
+  width: 100% !important;
+  padding: 0 10px;
+}
+
+.dt-btn-wrapper {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dt-btn-wrapper.dt-separator-after {
+  position: relative;
+  margin-bottom: 8px;
+}
+.dt-btn-wrapper.dt-separator-after::after {
+  content: "";
+  height: 1px;
+  width: 80%;
+  background-color: #e6e6e6;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  bottom: -5px;
+}
+.dt-btn-wrapper.dt-separator-horizontal {
+  position: relative;
+  margin-right: 8px;
+}
+.dt-btn-wrapper.dt-separator-horizontal::after {
+  content: "";
+  height: 80%;
+  width: 1px;
+  background-color: #e6e6e6;
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.dt-stamps-palette {
+  border: 1.5px solid #dfdfdf !important;
+  border-radius: 4px;
+}
+
+@-webkit-keyframes dt-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes dt-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/*# sourceMappingURL=drawing-tool.css.map */

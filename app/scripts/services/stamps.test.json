@@ -1,0 +1,17 @@
+{
+  "Doors": ["./assets/stamps/door.svg"],
+  "Templates": ["./assets/stamps/T-stijl.svg", "./assets/stamps/Hoekstijl.svg"],
+  "Checkboxes": [
+    "./assets/stamps/checkbox_on60.svg",
+    "./assets/stamps/checkbox_off60.svg",
+    "./assets/stamps/checkbox_on80.svg",
+    "./assets/stamps/checkbox_off80.svg",
+    "./assets/stamps/checkbox_on100.svg",
+    "./assets/stamps/checkbox_off100.svg",
+    "./assets/stamps/checkbox_on120.svg",
+    "./assets/stamps/checkbox_off120.svg",
+    "./assets/stamps/checkbox_on140.svg",
+    "./assets/stamps/checkbox_off140.svg"
+  ],
+  "Extra": ["./assets/stamps/heart.svg", "./assets/stamps/stamp_1.svg"]
+}

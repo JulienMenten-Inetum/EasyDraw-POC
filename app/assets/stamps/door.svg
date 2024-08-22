@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 340 680">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0" x2="1" y1="680.3" y2="680.3" gradientTransform="matrix(0 433 433 0 -294341 124)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#69acdf"/>
+      <stop offset="0" stop-color="#69acdf"/>
+      <stop offset=".1" stop-color="#7bb6e3"/>
+      <stop offset=".7" stop-color="#cae3f6"/>
+      <stop offset="1" stop-color="#eaf6fe"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path d="M64 64h54v553H64z" class="cls-1"/>
+    </clipPath>
+    <style>
+      .cls-1,.cls-4{fill:none}.cls-4{stroke:#000;stroke-width:3px}
+    </style>
+  </defs>
+  <path fill="currentColor" d="M28 28h284v624H28z"/>
+  <path d="M0 0h340v680H0z" class="cls-1"/>
+  <path d="M30 30h281v621H30z" class="cls-4"/>
+  <path d="M41 41h258v598H41z" class="cls-4"/>
+  <g clip-path="url(#clippath)">
+    <path fill="url(#linear-gradient)" d="M-124 126h429v429h-429z" transform="rotate(-45 91 340)"/>
+  </g>
+  <path d="M64 64h54v553H64zM143 64h133v553H143z" class="cls-4"/>
+  <path fill="none" />
+  <path fill="none" />
+</svg>

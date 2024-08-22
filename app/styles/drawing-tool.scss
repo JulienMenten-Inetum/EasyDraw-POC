@@ -1,0 +1,194 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './variables.scss';
+@import './typography.scss';
+@import './toptoolbar.scss';
+@import './button.scss';
+
+#buttons {
+  display: inline-grid;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+  button,
+  input::file-selector-button {
+    background-color: $buttonColor;
+    border: $border;
+    padding: 10px 15px;
+    height: $buttonSize;
+    border-radius: $borderRadius;
+    &:hover {
+      background-color: $cc-blue;
+    }
+  }
+}
+
+.dt-container {
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 10px;
+  box-shadow: $boxShadow;
+  overflow: hidden;
+  border-radius: $borderRadius;
+
+  .dt-canvas-container {
+    background-color: $cc-charcoal-light-2;
+    vertical-align: top; // not needed but why not
+    display: inline-block;
+    outline: 0;
+
+    &.with-border {
+      border: $border;
+      border-radius: 0 $borderRadius $borderRadius 0;
+      canvas {
+        border-radius: 0 $borderRadius $borderRadius 0;
+      }
+    }
+  }
+
+  .dt-tools {
+    display: inline-block;
+    border: none;
+    vertical-align: top;
+    width: $buttonSize;
+    margin: 0;
+    position: relative;
+    /* the following unset boostrap styles set in the question-interactives */
+    -webkit-box-sizing: initial;
+    box-sizing: initial;
+    img {
+      vertical-align: initial;
+    }
+    >:first-child {
+      border: none !important;
+    }
+  }
+
+  .dt-expand {
+    position: relative;
+    &:after {
+      position: absolute;
+      display: block;
+      content: ' ';
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid $cc-charcoal;
+      bottom: 3px;
+      right: 1px;
+      width: 0;
+      height:0;
+      transform: rotate(135deg);
+    }
+
+  }
+
+  .dt-selected-line-width {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    right: 0;
+    left: 0;
+    height: $buttonSize - 10px;
+  }
+
+  .dt-palette {
+      display: flex;
+      border: $border;
+      border-radius: $borderRadius;
+      background-color: $white;
+    &.dt-horizontal {
+      z-index: 1; // render on top of canvas
+      .dt-btn {
+        vertical-align: middle;
+        height: calc($buttonSize / 1.5);
+        width: calc($buttonSize/ 1.5) !important;
+        border-radius: $borderRadius;
+      }
+    }
+    &.dt-vertical {
+      flex-direction: column;
+      border-radius: $borderRadius;
+    }
+  }
+
+  .dt-spin {
+    -webkit-animation: dt-spin 2s infinite linear;
+    animation: dt-spin 2s infinite linear;
+  }
+}
+
+.dt-text-btn-wrapper{
+  width: auto !important;
+  display: flex;
+  justify-content: start;
+  .dt-text-btn {
+    width: 100% !important;
+    padding: 0 10px;
+    
+  }
+  
+}
+
+.dt-btn-wrapper{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ &.dt-separator-after {
+      position: relative;
+      margin-bottom: 8px;
+      &::after {
+        content: '';
+        height: 1px;
+        width: 80%;
+        background-color: #e6e6e6;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        bottom: -5px;
+      }
+    }
+
+    &.dt-separator-horizontal {
+      position: relative;
+      margin-right: 8px;
+      &::after {
+        content: '';
+        height: 80%;
+        width: 1px;
+        background-color: #e6e6e6;
+        position: absolute;
+        right: -4px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+      }
+    }
+}
+
+.dt-stamps-palette {
+  border: $border !important;
+  border-radius: $borderRadius;
+}
+
+@-webkit-keyframes dt-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes dt-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

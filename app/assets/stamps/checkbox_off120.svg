@@ -1,0 +1,9 @@
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 50 50" overflow="visible" xml:space="preserve">
+<rect fill="none" width="50" height="50"/>
+	<g>
+	<path fill="currentColor" d="M19.2,19.2v11.6h11.6V19.2H19.2z M17.6,17.7h1.6h11.6h1.6v1.6v11.6v1.6h-1.6H19.2h-1.6v-1.6V19.2V17.7z
+		 M28.2,22.9l-0.6,0.6L26.1,25l1.5,1.5l0.6,0.6l-1.1,1.1l-0.6-0.6L25,26.2l-1.5,1.5l-0.6,0.6l-1.1-1.1l0.6-0.6l1.5-1.5l-1.5-1.5
+		l-0.6-0.6l1.1-1.1l0.6,0.6l1.5,1.5l1.5-1.5l0.6-0.6L28.2,22.9z"/>
+</g>
+</svg>

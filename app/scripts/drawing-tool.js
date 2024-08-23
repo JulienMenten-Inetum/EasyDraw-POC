@@ -1122,7 +1122,7 @@ DrawingTool.prototype._initTools = function () {
     ellipse: new BasicShapeTool("Ellipse Tool", this, "ellipse"),
     square: new BasicShapeTool("Square Tool", this, "square"),
     circle: new BasicShapeTool("Circle Tool", this, "circle"),
-    circle: new BasicShapeTool("Triangle Tool", this, "triangle"),
+    triangle: new BasicShapeTool("Triangle Tool", this, "triangle"),
     arc: new BasicShapeTool("Arc Tool", this, "arc"),
     free: new FreeDrawTool("Free Draw Tool", this),
     eraser: new Eraser("Eraser Tool", this),

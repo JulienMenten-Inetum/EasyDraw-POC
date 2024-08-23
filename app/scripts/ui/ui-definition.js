@@ -449,7 +449,7 @@ var ui = {
       name: "shapesPalette",
       tooltip: "Basic shape tool (click and hold to show available shapes)",
       classes: "dt-expand",
-      reflectsTools: ["rect", "ellipse", "square", "circle", "arc"],
+      reflectsTools: ["rect", "ellipse", "square", "circle", "triangle", "arc"],
       palette: "main",
       onInit: function () {
         this.setIcon(this.ui.getPaletteActiveButton("shapes"));
@@ -704,7 +704,7 @@ var ui = {
     {
       name: "triangle",
       tooltip: "Triangle",
-      label: "T",
+      label: "V",
       activatesTool: "triangle",
       palette: "shapes",
       icon: require("../../assets/icons/tools/triangle-tool.svg"),

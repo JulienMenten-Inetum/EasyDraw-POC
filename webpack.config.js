@@ -39,6 +39,7 @@ module.exports = {
       title: "EasyDraw",
       filename: "index.html",
       template: "app/index.html",
+      inject: true,
     }),
   ],
 };

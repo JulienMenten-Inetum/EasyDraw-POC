@@ -702,6 +702,15 @@ var ui = {
       show_label: false,
     },
     {
+      name: "triangle",
+      tooltip: "Triangle",
+      label: "T",
+      activatesTool: "triangle",
+      palette: "shapes",
+      icon: require("../../assets/icons/tools/triangle-tool.svg"),
+      show_label: false,
+    },
+    {
       name: "arc",
       tooltip: "Arc",
       label: "A",

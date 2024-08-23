@@ -1,32 +1,35 @@
-var fabric    = require('fabric').fabric;
-var inherit   = require('../../inherit');
-var ShapeTool = require('../shape-tool');
-var Util      = require('../../util');
-
+var fabric = require("fabric").fabric;
+var inherit = require("../../inherit");
+var ShapeTool = require("../shape-tool");
+var Util = require("../../util");
 
 var SUPPORTED_SHAPES = {
   rect: {
-    fabricType: 'rect'
+    fabricType: "rect",
   },
   square: {
-    fabricType: 'rect',
-    uniform: true
+    fabricType: "rect",
+    uniform: true,
   },
   ellipse: {
-    fabricType: 'ellipse',
-    radius: true
+    fabricType: "ellipse",
+    radius: true,
   },
   circle: {
-    fabricType: 'ellipse',
+    fabricType: "ellipse",
     uniform: true,
-    radius: true
+    radius: true,
+  },
+  triangle: {
+    fabricType: "triangle",
+    uniform: true,
   },
   arc: {
-    fabricType: 'circle',
+    fabricType: "circle",
     uniform: false,
     radius: true,
     startAngle: Math.PI,
-    endAngle: Math.PI*2,
+    endAngle: Math.PI * 2,
     arc: true,
   },
 };
@@ -42,7 +45,9 @@ inherit(BasicShapeTool, ShapeTool);
 
 BasicShapeTool.prototype.mouseDown = function (e) {
   BasicShapeTool.super.mouseDown.call(this, e);
-  if (!this.active) { return; }
+  if (!this.active) {
+    return;
+  }
 
   var loc = this.canvas.getPointer(e.e);
 
@@ -97,7 +102,9 @@ BasicShapeTool.prototype.mouseDown = function (e) {
 
 BasicShapeTool.prototype.mouseMove = function (e) {
   BasicShapeTool.super.mouseMove.call(this, e);
-  if (this.down === false) { return; }
+  if (this.down === false) {
+    return;
+  }
 
   var loc = this.canvas.getPointer(e.e);
   var width = loc.x - this.originX;
@@ -112,12 +119,14 @@ BasicShapeTool.prototype.mouseMove = function (e) {
   }
 
   // we have to convert to positive dimensions as we draw, as ellipses cannot handle negative radii.
-  this.curr.set(this.convertToPositiveDimensions({
-    left: this.originX,
-    top: this.originY,
-    width: width,
-    height: height
-  }));
+  this.curr.set(
+    this.convertToPositiveDimensions({
+      left: this.originX,
+      top: this.originY,
+      width: width,
+      height: height,
+    })
+  );
 
   if (this._type.radius) {
     this.curr.set({
@@ -134,11 +143,11 @@ BasicShapeTool.prototype.mouseMove = function (e) {
     let point1 = {
       x: this.originX,
       y: this.originY + height + width / 2,
-    }
+    };
     let point2 = {
       x: this.originX + width,
       y: this.originY + height + width / 2,
-    }
+    };
     // this.p_circle  = new fabric.Circle({
     //   left:point1.x,
     //   top:point1.y,
@@ -171,7 +180,6 @@ BasicShapeTool.prototype.mouseMove = function (e) {
     //   this.line.width = point2.x - point1.x + this.master.state.strokeWidth
     //   this.line.height = 1
     // }
-
   }
 
   this.canvas.renderAll();
@@ -192,11 +200,11 @@ BasicShapeTool.prototype.mouseUp = function (e) {
 
 BasicShapeTool.prototype._processNewShape = function (s) {
   if (Math.max(s.width, s.height) < this.minSize) {
-    s.set('width', this.defSize);
-    s.set('height', this.defSize);
+    s.set("width", this.defSize);
+    s.set("height", this.defSize);
     if (this._type.radius) {
-      s.set('rx', this.defSize / 2);
-      s.set('ry', this.defSize / 4);
+      s.set("rx", this.defSize / 2);
+      s.set("ry", this.defSize / 4);
     }
     // So the center of the object is directly underneath the cursor.
     this.moveObjectLeftTop(s);
@@ -204,6 +212,5 @@ BasicShapeTool.prototype._processNewShape = function (s) {
   this.setCentralOrigin(s);
   s.setCoords();
 };
-
 
 module.exports = BasicShapeTool;

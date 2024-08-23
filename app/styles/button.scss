@@ -62,6 +62,7 @@
       font-size: $textButtonFontSize;
       font-family: $text;
       width: auto !important;
+      min-width: 120px;
       padding: 0 3px;
       border-bottom: $border;
       line-height: $buttonSize;

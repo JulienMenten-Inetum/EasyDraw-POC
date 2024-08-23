@@ -1,10 +1,6 @@
 const stamps = {
-  Doors: [require("../../assets/stamps/door.svg").default],
-
-  Extra: [
-    require("../../assets/stamps/heart.svg").default,
-    require("../../assets/stamps/stamp_1.svg").default,
-  ],
+  Doors: ["./assets/stamps/door.svg"],
+  Extra: ["../../assets/stamps/heart.svg", "../../assets/stamps/stamp_1.svg"],
 };
 
 class StampsService {

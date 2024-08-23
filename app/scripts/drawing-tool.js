@@ -1215,7 +1215,7 @@ DrawingTool.prototype.addStore = function (storeImp) {
 DrawingTool.prototype._initStamps = function () {
   let stampsService = new StampsService();
 
-  //this.setStamps(stampsService.getStamps());
+  this.setStamps(stampsService.getStamps());
 };
 
 DrawingTool.prototype.notifySave = function (serializedJson) {

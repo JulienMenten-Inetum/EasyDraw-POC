@@ -33,7 +33,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new CopyWebpackPlugin({
-      patterns: [{ from: "public" }],
+      patterns: [{ from: "app/assets", to: "assets" }],
     }),
     new HTMLWebpackPlugin({
       title: "EasyDraw",

@@ -1,7 +1,8 @@
 var DrawingTool = require("./scripts/drawing-tool");
-var style = require("./styles/drawing-tool.scss");
+require("./styles/drawing-tool.scss");
 
 var drawingTool = new DrawingTool("#drawing-tool", {
+  stamps: { Doors: ["../assets/stamps/door.svg"] },
   parseSVG: true,
   separatorsAfter: ["stamp", "strokeWidthPalette"],
 });

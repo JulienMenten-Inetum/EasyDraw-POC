@@ -29,3 +29,6 @@ __gh-pages-tmp__/
 
 # dist folders
 __gh-pages-tmp__/
+dist
+_dist
+dist_

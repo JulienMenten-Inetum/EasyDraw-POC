@@ -12,7 +12,7 @@ inherit(FillButton, BasicButton);
 FillButton.prototype.setColor = function (color) {
   let tmp_color = color || undefined;
 
-  if (tmp_color === undefined || tmp_color === "#fff") {
+  if (tmp_color === undefined || tmp_color === "#ffffffff") {
     $("#fill_color_bar").css("fill", "#fff");
 
     $("#fill_color_bar").attr("stroke", "#545454");

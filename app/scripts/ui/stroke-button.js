@@ -9,12 +9,15 @@ function StrokeButton(options, ui, drawingTool, extraClasses) {
 inherit(StrokeButton, BasicButton);
 
 StrokeButton.prototype.setColor = function (color) {
-  color = color || "none";
+  let tmp_color = color || undefined;
 
-  $("#stroke_color_bar").css("fill", color);
-  if (color === "none" || color === "#fff") {
+  if (tmp_color === undefined || tmp_color === "#ffffffff") {
+    $("#stroke_color_bar").css("fill", "#fff");
+
     $("#stroke_color_bar").attr("stroke", "#545454");
   } else {
+    $("#stroke_color_bar").css("fill", tmp_color);
+
     $("#stroke_color_bar").attr("stroke", "none");
   }
 };

@@ -6,17 +6,20 @@ function UndoRedo(drawTool) {
 
   this.reset();
 
-  this.dt.$element.on('keydown', function (e) {
-    if (e.keyCode === 90 /* Z */ && (e.ctrlKey || e.metaKey)) {
-      this.undo();
-      e.preventDefault();
-      canvasResize();
-    } else if (e.keyCode === 89 /* V */ && (e.ctrlKey || e.metaKey)) {
-      this.redo();
-      e.preventDefault();
-      canvasResize();
-    }
-  }.bind(this));
+  this.dt.$element.on(
+    "keydown",
+    function (e) {
+      if (e.keyCode === 90 /* Z */ && (e.ctrlKey || e.metaKey)) {
+        this.undo();
+        e.preventDefault();
+        //canvasResize();
+      } else if (e.keyCode === 89 /* V */ && (e.ctrlKey || e.metaKey)) {
+        this.redo();
+        e.preventDefault();
+        //canvasResize();
+      }
+    }.bind(this)
+  );
 }
 
 UndoRedo.prototype.undo = function (callback) {

@@ -6,7 +6,6 @@ function PipetteTool(name, drawTool, colorType) {
   Tool.call(this, name, drawTool);
   var self = this;
   this.currentColor_ = this.getCurrentColor(this.master, colorType);
-
   this.addEventListener("mouse:down", function (e) {
     self.mouseDown(e, colorType);
   });
@@ -16,20 +15,19 @@ inherit(PipetteTool, Tool);
 PipetteTool.prototype.getColor = function (e, canvas) {
   const canvasContext = canvas.getContext("2d");
   const pointer = canvas.getPointer(e.e);
-  const clientPointer = {
-    x: e.e.clientX,
-    y: e.e.clientY,
-  };
-  const layerPointer = {
-    x: e.e.layerX,
-    y: e.e.layerY,
-  };
-  const offset = canvas._offset;
 
-  const x = layerPointer.x;
-  const y = layerPointer.y;
-  const pixel = canvasContext.getImageData(x, y, 1, 1).data;
+  const zoom = canvas.getZoom();
+  const offsetX = canvas.viewportTransform[4];
+  const offsetY = canvas.viewportTransform[5];
+
+  const pixel = canvasContext.getImageData(
+    pointer.x * zoom + offsetX,
+    pointer.y * zoom + offsetY,
+    1,
+    1
+  ).data;
   const color = [pixel[0], pixel[1], pixel[2], pixel[3]];
+
   return color;
 };
 

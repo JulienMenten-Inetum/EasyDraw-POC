@@ -14,7 +14,7 @@
       .cls-1,.cls-4{fill:none}.cls-4{stroke:#000;stroke-width:3px}
     </style>
   </defs>
-  <path fill="currentColor" d="M28 28h284v624H28z"/>
+  <path fill="white" d="M28 28h284v624H28z"/>
   <path d="M0 0h340v680H0z" class="cls-1"/>
   <path d="M30 30h281v621H30z" class="cls-4"/>
   <path d="M41 41h258v598H41z" class="cls-4"/>

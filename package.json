@@ -19,10 +19,9 @@
     "url": "git+https://github.com/concord-consortium/drawing-tool.git"
   },
   "scripts": {
-    "build": "webpack --config=webpack.config.js",
+    "build": "webpack --config=webpack.config.js --prod",
     "start": "webpack-dev-server --hot=true ",
-    "server": "webpack-dev-server",
-    "sass": "sass app/styles/drawing-tool.scss dist/drawing-tool.css"
+    "server": "webpack-dev-server"
   },
   "peerDependencies": {
     "jquery": ">= 2.1.3"

@@ -344,6 +344,4 @@ const onResize = () => {
 window.addEventListener("resize", onResize);
 window.addEventListener("load", onResize);
 
-// Create new DrawingTool
-
 module.exports = DrawingTool;

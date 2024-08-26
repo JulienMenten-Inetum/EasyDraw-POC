@@ -535,7 +535,11 @@ DrawingTool.prototype.setStrokeWidth = function (width) {
 
 DrawingTool.prototype.setStrokeType = function (type) {
   //fabric.log(type)
-  this.state.strokeDashArray = [type, type];
+  if (type === null) {
+    this.state.strokeDashArray = null;
+  } else {
+    this.state.strokeDashArray = [type, type];
+  }
   this._fireStateChanged();
 };
 

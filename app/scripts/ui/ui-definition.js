@@ -153,30 +153,43 @@ var PATTERNS = [
 var STROKE_WIDTHS = [
   {
     value: 1,
+    type: "solid",
     icon: require("../../assets/icons/tools/line-width-1-px-icon.svg"),
   },
   {
     value: 2,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-2-px-icon.svg"),
   },
   {
     value: 4,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-4-px-icon.svg"),
   },
   {
     value: 8,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-8-px-icon.svg"),
   },
   {
     value: 12,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-12-px-icon.svg"),
   },
   {
     value: 16,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-16-px-icon.svg"),
   },
   {
     value: 20,
+    type: "solid",
+
     icon: require("../../assets/icons/tools/line-width-20-px-icon.svg"),
   },
   {
@@ -850,18 +863,16 @@ ui.buttons.push({
 });
 // Stroke width
 STROKE_WIDTHS.forEach(function (width) {
-  let type = !!width.type ? " / Dashed" : "";
+  let type = width.type !== "solid" ? " / Dashed" : null;
   let btn = {
     buttonClass: LineWidthButton,
-    tooltip: width.value + "px" + type,
+    tooltip: `${width.value}px${!!type ? type : ""}`,
+    type: width.type,
     width: width.value,
     palette: "strokeWidths",
     icon: width.icon,
     split: width.split,
   };
-  if (!!width.type) {
-    btn.type = width.type;
-  }
   ui.buttons.push(btn);
 });
 

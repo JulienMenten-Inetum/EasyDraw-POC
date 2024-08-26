@@ -10,7 +10,6 @@ function LineWidthButton(options, ui, drawingTool, extraClasses) {
     const strokeType = options.type === "solid" ? null : options.type;
     this.dt.setStrokeType(strokeType);
     this.dt.setSelectionStrokeType(strokeType);
-    console.log(strokeType);
   };
   options.onStateChange = function (state) {
     //fabric.log('state:',state.strokeDashArray)

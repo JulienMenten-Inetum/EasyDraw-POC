@@ -11,7 +11,7 @@ inherit(StrokeButton, BasicButton);
 StrokeButton.prototype.setColor = function (color) {
   let tmp_color = color || undefined;
 
-  if (tmp_color === undefined || tmp_color === "#ffffffff") {
+  if (tmp_color === undefined || this.isColorWhite(color)) {
     $("#stroke_color_bar").css("fill", "#fff");
 
     $("#stroke_color_bar").attr("stroke", "#545454");
@@ -20,6 +20,10 @@ StrokeButton.prototype.setColor = function (color) {
 
     $("#stroke_color_bar").attr("stroke", "none");
   }
+};
+
+StrokeButton.prototype.isColorWhite = function (color) {
+  return color === "#fff" || color === "#ffffffff";
 };
 
 module.exports = StrokeButton;

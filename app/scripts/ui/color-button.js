@@ -81,4 +81,8 @@ ColorButton.prototype.setBackground = function (color) {
   this.$element.css("background", color);
 };
 
+ColorButton.prototype.isColorWhite = function (color) {
+  return color === "#fff" || color === "#ffffffff";
+};
+
 module.exports = ColorButton;

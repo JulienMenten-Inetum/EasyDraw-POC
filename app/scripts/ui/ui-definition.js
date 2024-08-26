@@ -555,6 +555,7 @@ var ui = {
       onStateChange: function (state) {
         this.setLineWidth(state.strokeWidth);
       },
+
       icon: require("../../assets/icons/tools/ico-easydraw-line-weight.svg"),
     },
     {
